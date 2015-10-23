@@ -1,7 +1,6 @@
 #!/usr/bin/perl
 use IO::Socket;
 use POSIX 'strftime';
-#use Time::HiRes qw(gettimeofday tv_interval);
 use Getopt::Long;
 use strict;
 $| = 1;
