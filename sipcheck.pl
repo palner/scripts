@@ -52,10 +52,7 @@ send($sock, $packet, 0, $portaddr) == length($packet)
 eval {
 	local $SIG{ALRM} = sub { die "alarm time out" };
 	alarm $Receive_Timeout;
-#	$portaddr = recv($sock, $packet, 1500, 0) or die "couldn't receive: $!";
-	while ($line = <$sock>) {
-    	$portaddr .= $line;
-	}
+	$portaddr = recv($sock, $packet, 1500, 0) or die "couldn't receive: $!";
 	alarm 0;
 	1;
 } or die($@);
