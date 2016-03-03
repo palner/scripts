@@ -1,0 +1,2 @@
+# Macro to GoSub replacement
+perl -pi.bak -e 's/Macro\((.*),(.*)\)/GoSub\(sub$1,start,1\($2\)\)/g' extensions.conf
