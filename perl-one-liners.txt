@@ -1,2 +1,5 @@
 # Macro to GoSub replacement
 perl -pi.bak -e 's/Macro\((.*),(.*)\)/GoSub\(sub$1,start,1\($2\)\)/g' extensions.conf
+
+# SED (not perl) replace spaces with underscore
+for file in * ; do mv -v "$file" "$(echo $file | sed 's/\ /_/g')" ; done
